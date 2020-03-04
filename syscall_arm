@@ -1,0 +1,23 @@
+system calls in ARM:
+
+(_label:)
+	r7 = 1 : syscall to exit the program (to the terminal)
+	r7 = 3 : syscall to read from keyboard
+	r7 = 4 : syscall to output to screen
+
+	r0 = 0 : read from stdin (input stream keyboard)
+	r0 = 1 : write on stdout
+	r0 = 2 : write on stderr (to check)
+
+	r2 = #length of the string (ex: mov r2, #1 = read 1 character(byte))
+
+	r1 = address of the string (use ldr)
+
+	swi 0 : make the system call, expect the result in r0
+
+
+	assemble: as myprog.s -o myprog.o
+	link:	  ld myprog.o -o myprog
+	execute:  ./myprog [; echo $? (to "output" the data in r0)]
+
+write an assembly program that loop until the value 2 is in r1
