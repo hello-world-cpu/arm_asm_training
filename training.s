@@ -13,8 +13,6 @@
 .balign 4
 	patternc: .asciz "%c"
 .balign 4
-	patterns: .asciz "%s"
-.balign 4
 	choice: .word 0
 .balign 4
 	lr_bu: .word 0
@@ -69,7 +67,6 @@ addr_re: .word re
 addr_ye: .word ye
 addr_sent2: .word sent2
 addr_patternc: .word patternc
-addr_patterns: .word patterns
 addr_choice: .word choice
 addr_lr_bu: .word lr_bu
 
