@@ -21,7 +21,7 @@ lr_bu: .word 0
 
 main:
 	ldr r1, addr_lr_bu	@TC: we are inside a function, so called by another program. To return to that other program, this latter (by a bl or similar instruction) stored the pc in lr.
-	str lr, [r1]		@the thing is we haveto modify lr in this function (calls to scanf and printf). So we have to backup the original lr in memory.
+	str lr, [r1]		@the thing is we have to modify lr in this function (calls to scanf and printf). So we have to backup the original lr in memory.
 
 	ldr r0, addr_question
 	bl printf
